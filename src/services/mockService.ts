@@ -13,6 +13,7 @@ export type Member = {
   yearsAtECI?: string
   membershipNumber?: string
   registeredAt?: string
+  chapter?: string
   isAdmin?: boolean
 }
 
