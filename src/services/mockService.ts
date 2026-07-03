@@ -345,7 +345,7 @@ export async function voteLeader(leaderId: string, voterEmail: string) {
       {
         id: `p_${Date.now()}_1`,
         author: 'Behangana Keneth',
-        content: 'You\'re invited — ECOSA Networking Dinner. Reconnect and build partnerships. Tickets: UGX 50,000 — register to secure your seat. Venue: SKYz Hotel Naguru.',
+        content: 'You\'re invited — ECOSA Networking Dinner. Reconnect and build partnerships. The event will happen on Friday 27th November, 2026. Tickets: UGX 50,000 — register to secure your seat. Venue: SKYz Hotel Naguru.',
         media: '/sample-event1.svg',
         createdAt: now,
         comments: [],
@@ -410,7 +410,7 @@ export async function voteLeader(leaderId: string, voterEmail: string) {
         {
           id: `p_${Date.now()}_1`,
           author: 'Behangana Keneth',
-          content: 'You\'re invited — ECOSA Networking Dinner. Reconnect and build partnerships. Tickets: UGX 50,000 — register to secure your seat. Venue: SKYz Hotel Naguru.',
+          content: 'You\'re invited — ECOSA Networking Dinner. Reconnect and build partnerships. The event will happen on Friday 27th November, 2026. Tickets: UGX 50,000 — register to secure your seat. Venue: SKYz Hotel Naguru.',
           media: '/sample-event1.svg',
           createdAt: now,
           comments: [],

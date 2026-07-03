@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { getPosts } from '../services/mockService'
 
 function formatTime(iso?: string) {
@@ -38,7 +39,11 @@ export default function Community(){
                 <div style={{color:'#6b7280',fontSize:12,marginTop:4}}>{`Admin ${post.author ? `- ${post.author}` : ''}`} · {formatTime(post.createdAt)}</div>
               </div>
               {post.registerUrl && (
-                <a className="btn" href={post.registerUrl.startsWith('/') ? post.registerUrl : post.registerUrl} style={{whiteSpace:'nowrap'}}>Register</a>
+                post.registerUrl.startsWith('/') ? (
+                  <Link className="btn" to={post.registerUrl} style={{whiteSpace:'nowrap'}}>Register</Link>
+                ) : (
+                  <a className="btn" href={post.registerUrl} style={{whiteSpace:'nowrap'}}>Register</a>
+                )
               )}
             </div>
             {post.content && post.title && <div style={{marginTop:12}}>{post.content}</div>}
