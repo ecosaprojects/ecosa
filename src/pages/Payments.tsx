@@ -2,19 +2,20 @@ import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { addPayment, findMemberByEmail, registerMember } from '../services/mockService'
 
-const purposeOptions = ['Membership', 'Insurance', 'Sacco', 'Project Donation'] as const
+const purposeOptions = ['Membership', 'Insurance', 'Sacco', 'Project Donation', 'Event Ticket'] as const
 type Purpose = typeof purposeOptions[number]
 
 export default function Payments(){
   const [searchParams] = useSearchParams()
   const requestedPurpose = searchParams.get('purpose')
   const initialPurpose: Purpose = purposeOptions.includes(requestedPurpose as Purpose) ? (requestedPurpose as Purpose) : 'Membership'
+  const initialAmount = searchParams.get('amount') || '20000'
 
   const [name,setName]=useState('')
   const [email,setEmail]=useState('')
   const [phone,setPhone]=useState('')
   const [years,setYears]=useState('')
-  const [amount,setAmount]=useState('20000')
+  const [amount,setAmount]=useState(initialAmount)
   const [purpose,setPurpose]=useState<Purpose>(initialPurpose)
   const [method,setMethod]=useState<'mpesa'|'mtn'|'airtel'|'card'>('mpesa')
 
@@ -115,6 +116,7 @@ export default function Payments(){
             <option value="Insurance">Insurance</option>
             <option value="Sacco">Sacco</option>
             <option value="Project Donation">Project Donation</option>
+            <option value="Event Ticket">Event Ticket</option>
           </select>
           <label>Amount (UGX)</label>
           <input value={amount} onChange={e=>setAmount(e.target.value)} placeholder="20000" />
