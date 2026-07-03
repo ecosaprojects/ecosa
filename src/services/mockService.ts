@@ -352,7 +352,7 @@ export async function voteLeader(leaderId: string, voterEmail: string) {
         likes: [],
         shares: 0,
         rsvps: [],
-        registerUrl: '/register'
+        registerUrl: '/payments?purpose=Event+Ticket&amount=50000'
       }
     ]
     // replace any existing posts with the single canonical post
@@ -417,7 +417,7 @@ export async function voteLeader(leaderId: string, voterEmail: string) {
           likes: [],
           shares: 0,
           rsvps: [],
-          registerUrl: 'https://ecosa.org/register'
+          registerUrl: '/payments?purpose=Event+Ticket&amount=50000'
         }
       ]
       write('ecosa_posts', posts)
